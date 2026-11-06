@@ -4,6 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <script>try{var t=localStorage.getItem('kv-theme');if(t==='dark'||t==='light')document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
 <title>Konstantin Veselyi — Senior UX/UI Designer</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap">
 <style>
@@ -105,13 +107,16 @@ footer .foot-icon{background:color-mix(in srgb,var(--bg) 14%,transparent);border
 
 /* header: progressive blur + soft pill buttons */
 @property --ang{syntax:"<angle>";inherits:false;initial-value:0deg}
+@property --el-y{syntax:"<length>";inherits:false;initial-value:6px}
+@property --el-b{syntax:"<length>";inherits:false;initial-value:14px}
+
 :root{--nb:#fff;--nhi:rgba(255,255,255,.95);--nlo:rgba(16,16,18,.05);--nsh:rgba(16,16,18,.14);--nsh2:rgba(16,16,18,.10)}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--nb:#1c1d21;--nhi:rgba(255,255,255,.12);--nlo:rgba(0,0,0,.35);--nsh:rgba(0,0,0,.60);--nsh2:rgba(0,0,0,.45)}}
 :root[data-theme="dark"]{--nb:#1c1d21;--nhi:rgba(255,255,255,.12);--nlo:rgba(0,0,0,.35);--nsh:rgba(0,0,0,.60);--nsh2:rgba(0,0,0,.45)}
 nav::before{content:"";position:absolute;left:0;right:0;top:0;height:calc(100% + 32px);z-index:-1;pointer-events:none;-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);background:linear-gradient(color-mix(in srgb,var(--bg) 70%,transparent),color-mix(in srgb,var(--bg) 35%,transparent) 60%,transparent);-webkit-mask-image:linear-gradient(#000 50%,transparent);mask-image:linear-gradient(#000 50%,transparent)}
-.btn,.icon-btn{box-shadow:inset 0 1px 1px rgba(255,255,255,.22),inset 0 -2px 4px rgba(0,0,0,.12),calc(sin(var(--ang))*-4px) calc(cos(var(--ang))*4px + 2px) 12px var(--nsh),0 1px 2px var(--nsh2);transition:transform .2s,opacity .2s}
-.btn.ghost,.btn.icon,.icon-btn{background:var(--nb);color:var(--ink);border:1px solid var(--nlo);box-shadow:inset 0 1px 1px var(--nhi),inset 0 -2px 4px var(--nlo),calc(sin(var(--ang))*-4px) calc(cos(var(--ang))*4px + 2px) 12px var(--nsh),0 1px 2px var(--nsh2)}
-@media(hover:hover) and (pointer:fine){.btn:hover,.icon-btn:hover{opacity:1;transform:translateY(-.5px);--ang:180deg}}
+.btn,.icon-btn{box-shadow:inset 0 1px 1px rgba(255,255,255,.22),inset 0 -2px 4px rgba(0,0,0,.12),0 var(--el-y) var(--el-b) var(--nsh),0 1px 2px var(--nsh2);transition:transform .2s,opacity .2s}
+.btn.ghost,.btn.icon,.icon-btn{background:var(--nb);color:var(--ink);border:1px solid var(--nlo);box-shadow:inset 0 1px 1px var(--nhi),inset 0 -2px 4px var(--nlo),0 var(--el-y) var(--el-b) var(--nsh),0 1px 2px var(--nsh2)}
+@media(hover:hover) and (pointer:fine){.btn:hover,.icon-btn:hover{opacity:1;transform:translateY(-.5px);--el-y:2px;--el-b:6px}}
 @media(hover:hover) and (pointer:fine){.btn.ghost:hover,.btn.icon:hover,.icon-btn:hover{background:var(--nb)}}
 footer .btn,footer .icon-btn{--nsh:rgba(0,0,0,.55);--nsh2:rgba(0,0,0,.4)}
 footer .btn.ghost{background:transparent;color:var(--bg);border-color:color-mix(in srgb,var(--bg) 30%,transparent)}
@@ -120,7 +125,10 @@ footer .foot-icon{background:color-mix(in srgb,var(--bg) 14%,transparent);border
 @media(prefers-reduced-motion:reduce){.btn:hover,.icon-btn:hover{animation:none;--ang:0deg}}
 
 @media(max-width:640px){
-  .photo{width:min(360px,78%,max(112px,calc(100svh - 560px)))}
+  .photo{width:min(360px,78%,max(112px,calc(100svh - 516px)))}
+}
+@media(max-width:360px){
+  .photo{width:min(360px,78%,max(72px,calc(100svh - 500px)))}
   .wrap{padding:0 16px}
   section{padding:48px 0}
   h2{margin-bottom:24px}
@@ -183,8 +191,8 @@ footer,footer.endcta{margin-top:-32px;padding-top:96px}
 
 /* PREVIEW: motion & interaction pass from the review */
 :root{--ease-out:cubic-bezier(.23,1,.32,1);--dur-press:140ms;--dur-hover:200ms}
-.btn,.icon-btn{transition:transform 160ms var(--ease-out),background-color var(--dur-hover) ease,opacity var(--dur-hover) ease,--ang .5s ease-in-out}
-@media(hover:hover) and (pointer:fine){.btn:hover,.icon-btn:hover{transition:transform 160ms var(--ease-out),background-color var(--dur-hover) ease,opacity var(--dur-hover) ease,--ang .8s ease-in-out}}
+.btn,.icon-btn{transition:transform 160ms var(--ease-out),background-color var(--dur-hover) ease,opacity var(--dur-hover) ease,--el-y .2s cubic-bezier(.2,0,0,1),--el-b .2s cubic-bezier(.2,0,0,1)}
+@media(hover:hover) and (pointer:fine){.btn:hover,.icon-btn:hover{transition:transform 160ms var(--ease-out),background-color var(--dur-hover) ease,opacity var(--dur-hover) ease,--el-y .2s cubic-bezier(.2,0,0,1),--el-b .2s cubic-bezier(.2,0,0,1)}}
 .btn:active,.icon-btn:active{transition-duration:var(--dur-press)}
 .cover{transition:transform var(--dur-press) var(--ease-out)}
 .cover img{transition:transform 300ms var(--ease-out)}
@@ -206,16 +214,17 @@ footer,footer.endcta{margin-top:-32px;padding-top:96px}
 /* shadow half-turn on hover (0.8s), returns on leave */
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) footer .foot-icon{background:#fff;border-color:rgba(16,16,18,.08);color:#0e0e10;--nhi:rgba(255,255,255,.95);--nlo:rgba(16,16,18,.05);--nsh:rgba(16,16,18,.16);--nsh2:rgba(16,16,18,.10)}}
 :root[data-theme="dark"] footer .foot-icon{background:#fff;border-color:rgba(16,16,18,.08);color:#0e0e10;--nhi:rgba(255,255,255,.95);--nlo:rgba(16,16,18,.05);--nsh:rgba(16,16,18,.16);--nsh2:rgba(16,16,18,.10)}
+.btn .dl{width:18px;height:18px;margin-left:8px;flex:none}
 </style>
 </head>
 <body>
 <div class="page">
 <nav><div class="wrap">
-  <div class="links"><a href="#work">Work</a><a href="#services">Services</a><a href="#experience">Experience</a><a href="#about">About</a></div>
+  <div class="links"><a href="#work">Work</a><a href="#experience">Experience</a><a href="#about">About</a></div>
   <a class="mark" href="#" aria-label="Home">
     <svg viewBox="0 0 361 355" fill="currentColor"><path d="M88 89 H160 V225 L89 294 Z"/><circle cx="229" cy="132" r="55"/><path d="M160 255 L160 222 L226 156 L319 294 L160 294 Z"/></svg>
   </a>
-  <div class="right"><a class="btn ghost" href="#" target="_blank" rel="noopener">My Resume</a><button class="btn ghost icon" id="theme" aria-label="Toggle dark mode">
+  <div class="right"><a class="btn ghost" href="#" target="_blank" rel="noopener">My Resume<svg class="dl" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M19.3517 7.61665L15.3929 4.05375C14.2651 3.03868 13.7012 2.53114 13.0092 2.26562L13 5.00011C13 7.35713 13 8.53564 13.7322 9.26787C14.4645 10.0001 15.643 10.0001 18 10.0001H21.5801C21.2175 9.29588 20.5684 8.71164 19.3517 7.61665Z" fill="currentColor"/><path d="M10 22H14C17.7712 22 19.6569 22 20.8284 20.8284C22 19.6569 22 17.7712 22 14V13.5629C22 12.6901 22 12.0344 21.9574 11.5001H18L17.9051 11.5001C16.808 11.5002 15.8385 11.5003 15.0569 11.3952C14.2098 11.2813 13.3628 11.0198 12.6716 10.3285C11.9803 9.63726 11.7188 8.79028 11.6049 7.94316C11.4998 7.16164 11.4999 6.19207 11.5 5.09497L11.5092 2.26057C11.5095 2.17813 11.5166 2.09659 11.53 2.01666C11.1214 2 10.6358 2 10.0298 2C6.23869 2 4.34315 2 3.17157 3.17157C2 4.34315 2 6.22876 2 10V14C2 17.7712 2 19.6569 3.17157 20.8284C4.34315 22 6.22876 22 10 22ZM7.98704 19.0472C8.27554 19.3176 8.72446 19.3176 9.01296 19.0472L11.013 17.1722C11.3151 16.8889 11.3305 16.4142 11.0472 16.112C10.7639 15.8099 10.2892 15.7945 9.98704 16.0778L9.25 16.7688L9.25 13.5C9.25 13.0858 8.91421 12.75 8.5 12.75C8.08579 12.75 7.75 13.0858 7.75 13.5V16.7688L7.01296 16.0778C6.71077 15.7945 6.23615 15.8099 5.95285 16.112C5.66955 16.4142 5.68486 16.8889 5.98704 17.1722L7.98704 19.0472Z" fill-rule="evenodd" clip-rule="evenodd" fill="currentColor"/></svg></a><button class="btn ghost icon" id="theme" aria-label="Toggle dark mode">
     <svg class="icon-moon" viewBox="0 0 24 24" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M11.4725 2.6169C12.191 2.5749 12.5504 3.47097 12.0019 3.93712C10.7304 5.01777 9.98438 6.59577 9.98438 8.2968C9.98438 11.4552 12.5448 14.0155 15.7031 14.0155C17.4041 14.0155 18.9821 13.2695 20.0628 11.998C20.5285 11.4501 21.4237 11.8081 21.3831 12.526C21.1031 17.4801 16.9955 21.3749 12.0117 21.3749C6.82758 21.3749 2.625 17.1723 2.625 11.9882C2.625 7.03375 6.47548 2.94076 11.3953 2.62143L11.4001 2.62112L11.4725 2.6169Z"/></svg>
     <svg class="icon-sun" viewBox="0 0 24 24" fill="currentColor"><path d="M12 7C10.6739 7 9.40215 7.52678 8.46447 8.46447C7.52678 9.40215 7 10.6739 7 12C7 13.3261 7.52678 14.5979 8.46447 15.5355C9.40215 16.4732 10.6739 17 12 17C13.3261 17 14.5979 16.4732 15.5355 15.5355C16.4732 14.5979 17 13.3261 17 12C17 10.6739 16.4732 9.40215 15.5355 8.46447C14.5979 7.52678 13.3261 7 12 7Z"/><path fill-rule="evenodd" clip-rule="evenodd" d="M12 1C12.2652 1 12.5196 1.10536 12.7071 1.29289C12.8946 1.48043 13 1.73478 13 2V3C13 3.26522 12.8946 3.51957 12.7071 3.70711C12.5196 3.89464 12.2652 4 12 4C11.7348 4 11.4804 3.89464 11.2929 3.70711C11.1054 3.51957 11 3.26522 11 3V2C11 1.73478 11.1054 1.48043 11.2929 1.29289C11.4804 1.10536 11.7348 1 12 1ZM3.293 3.293C3.48053 3.10553 3.73484 3.00021 4 3.00021C4.26516 3.00021 4.51947 3.10553 4.707 3.293L6.207 4.793C6.38916 4.9816 6.48995 5.2342 6.48767 5.4964C6.4854 5.7586 6.38023 6.00941 6.19482 6.19482C6.00941 6.38023 5.7586 6.4854 5.4964 6.48767C5.2342 6.48995 4.9816 6.38916 4.793 6.207L3.293 4.707C3.10553 4.51947 3.00021 4.26516 3.00021 4C3.00021 3.73484 3.10553 3.48053 3.293 3.293ZM20.707 3.293C20.8945 3.48053 20.9998 3.73484 20.9998 4C20.9998 4.26516 20.8945 4.51947 20.707 4.707L19.207 6.207C19.1148 6.30251 19.0044 6.37869 18.8824 6.4311C18.7604 6.48351 18.6292 6.5111 18.4964 6.51225C18.3636 6.5134 18.2319 6.4881 18.109 6.43782C17.9862 6.38754 17.8745 6.31329 17.7806 6.2194C17.6867 6.1255 17.6125 6.01385 17.5622 5.89095C17.5119 5.76806 17.4866 5.63638 17.4877 5.5036C17.4889 5.37082 17.5165 5.2396 17.5689 5.1176C17.6213 4.99559 17.6975 4.88525 17.793 4.793L19.293 3.293C19.4805 3.10553 19.7348 3.00021 20 3.00021C20.2652 3.00021 20.5195 3.10553 20.707 3.293ZM1 12C1 11.7348 1.10536 11.4804 1.29289 11.2929C1.48043 11.1054 1.73478 11 2 11H3C3.26522 11 3.51957 11.1054 3.70711 11.2929C3.89464 11.4804 4 11.7348 4 12C4 12.2652 3.89464 12.5196 3.70711 12.7071C3.51957 12.8946 3.26522 13 3 13H2C1.73478 13 1.48043 12.8946 1.29289 12.7071C1.10536 12.5196 1 12.2652 1 12ZM20 12C20 11.7348 20.1054 11.4804 20.2929 11.2929C20.4804 11.1054 20.7348 11 21 11H22C22.2652 11 22.5196 11.1054 22.7071 11.2929C22.8946 11.4804 23 11.7348 23 12C23 12.2652 22.8946 12.5196 22.7071 12.7071C22.5196 12.8946 22.2652 13 22 13H21C20.7348 13 20.4804 12.8946 20.2929 12.7071C20.1054 12.5196 20 12.2652 20 12ZM6.207 17.793C6.39447 17.9805 6.49979 18.2348 6.49979 18.5C6.49979 18.7652 6.39447 19.0195 6.207 19.207L4.707 20.707C4.5184 20.8892 4.2658 20.99 4.0036 20.9877C3.7414 20.9854 3.49059 20.8802 3.30518 20.6948C3.11977 20.5094 3.0146 20.2586 3.01233 19.9964C3.01005 19.7342 3.11084 19.4816 3.293 19.293L4.793 17.793C4.98053 17.6055 5.23484 17.5002 5.5 17.5002C5.76516 17.5002 6.01947 17.6055 6.207 17.793ZM17.793 17.793C17.9805 17.6055 18.2348 17.5002 18.5 17.5002C18.7652 17.5002 19.0195 17.6055 19.207 17.793L20.707 19.293C20.8892 19.4816 20.99 19.7342 20.9877 19.9964C20.9854 20.2586 20.8802 20.5094 20.6948 20.6948C20.5094 20.8802 20.2586 20.9854 19.9964 20.9877C19.7342 20.99 19.4816 20.8892 19.293 20.707L17.793 19.207C17.6055 19.0195 17.5002 18.7652 17.5002 18.5C17.5002 18.2348 17.6055 17.9805 17.793 17.793ZM12 20C12.2652 20 12.5196 20.1054 12.7071 20.2929C12.8946 20.4804 13 20.7348 13 21V22C13 22.2652 12.8946 22.5196 12.7071 22.7071C12.5196 22.8946 12.2652 23 12 23C11.7348 23 11.4804 22.8946 11.2929 22.7071C11.1054 22.5196 11 22.2652 11 22V21C11 20.7348 11.1054 20.4804 11.2929 20.2929C11.4804 20.1054 11.7348 20 12 20Z"/></svg>
   </button></div>
@@ -253,7 +262,7 @@ footer,footer.endcta{margin-top:-32px;padding-top:96px}
     <div class="more" hidden><button class="btn ghost" data-more="more-work" aria-expanded="false" aria-controls="more-work">View more</button></div>
   </section>
 
-  <section id="services">
+  <section id="services" hidden>
     <div class="svc-layout">
       <div class="svc-left">
         <p class="eyebrow">(How I can help)</p>
@@ -347,9 +356,7 @@ footer,footer.endcta{margin-top:-32px;padding-top:96px}
       <a class="icon-btn foot-icon" href="https://www.linkedin.com/in/veselyi/" target="_blank" rel="noopener" aria-label="LinkedIn">
         <svg viewBox="0 0 24 24" fill="none"><path fill="currentColor" d="M7.36086 19.1999H3.87711V7.98365H7.36086V19.1999ZM5.61711 6.45365C4.50336 6.45365 3.59961 5.53115 3.59961 4.4174C3.59961 3.88115 3.81336 3.37115 4.19211 2.9924C4.57086 2.61365 5.08461 2.3999 5.61711 2.3999C6.14961 2.3999 6.66336 2.61365 7.04211 2.9924C7.42086 3.37115 7.63461 3.8849 7.63461 4.4174C7.63461 5.53115 6.73086 6.45365 5.61711 6.45365ZM20.3959 19.1999H16.9196V13.7399C16.9196 12.4387 16.8934 10.7699 15.1084 10.7699C13.2971 10.7699 13.0196 12.1837 13.0196 13.6462V19.1999H9.53961V7.98365H12.8809V9.51365H12.9296C13.3946 8.6324 14.5309 7.7024 16.2259 7.7024C19.7509 7.7024 20.3996 10.0237 20.3996 13.0387V19.1999H20.3959Z"/></svg>
       </a>
-      <a class="icon-btn foot-icon" href="https://www.behance.net/ka_es" target="_blank" rel="noopener" aria-label="Behance">
-        <svg viewBox="0 0 24 24" fill="none"><path fill="currentColor" d="M9.9002 11.295C11.0927 10.725 11.7152 9.86254 11.7152 8.52004C11.7152 5.87254 9.7427 5.22754 7.46645 5.22754H1.2002V18.5175H7.6427C10.0577 18.5175 12.3264 17.3588 12.3264 14.6588C12.3264 12.99 11.5352 11.7563 9.9002 11.295ZM4.12145 7.49629H6.8627C7.91645 7.49629 8.8652 7.79254 8.8652 9.01504C8.8652 10.1438 8.12645 10.5975 7.08395 10.5975H4.12145V7.49629ZM7.2452 16.26H4.12145V12.6H7.3052C8.59145 12.6 9.4052 13.1363 9.4052 14.4975C9.4052 15.84 8.43395 16.26 7.2452 16.26ZM20.6889 7.23379H15.3002V5.92504H20.6889V7.23379ZM22.8002 13.845C22.8002 10.9988 21.1352 8.62504 18.1164 8.62504C15.1839 8.62504 13.1927 10.83 13.1927 13.7175C13.1927 16.7138 15.0789 18.7688 18.1164 18.7688C20.4152 18.7688 21.9039 17.7338 22.6202 15.5325H20.2877C20.0364 16.3538 19.0014 16.7888 18.1989 16.7888C16.6502 16.7888 15.8364 15.8813 15.8364 14.34H22.7777C22.7889 14.1825 22.8002 14.0138 22.8002 13.845ZM15.8402 12.675C15.9264 11.4113 16.7664 10.62 18.0339 10.62C19.3614 10.62 20.0289 11.4 20.1414 12.675H15.8402Z"/></svg>
-      </a>
+      
     </div>
     <p class="designed-by">Designed by Konstantin Veselyi</p>
   </div>
