@@ -285,7 +285,7 @@ footer,footer.endcta{margin-top:-32px;padding-top:96px}
 
 /* buttons: standard hover/press = state layer + elevation (2026-11-09) */
 @property --sl{syntax:"<percentage>";inherits:false;initial-value:0%}
-.btn,.icon-btn{--el-y:3px;--el-b:10px;background-image:linear-gradient(color-mix(in srgb,currentColor var(--sl),transparent),color-mix(in srgb,currentColor var(--sl),transparent));transition:transform 150ms cubic-bezier(.2,0,0,1),--sl 150ms linear,--el-y 200ms cubic-bezier(.2,0,0,1),--el-b 200ms cubic-bezier(.2,0,0,1),background-color 200ms ease,opacity 150ms ease}
+.btn,.icon-btn{--el-y:3px;--el-b:10px;background-image:linear-gradient(color-mix(in srgb,currentColor var(--sl),transparent),color-mix(in srgb,currentColor var(--sl),transparent))!important;transition:transform 150ms cubic-bezier(.2,0,0,1),--sl 150ms linear,--el-y 200ms cubic-bezier(.2,0,0,1),--el-b 200ms cubic-bezier(.2,0,0,1),background-color 200ms ease,opacity 150ms ease}
 @media(hover:hover) and (pointer:fine){.btn:hover,.icon-btn:hover{opacity:1;transform:none;--sl:8%;--el-y:6px;--el-b:16px}.lb-nav.btn:hover{transform:translateY(-50%)}}
 .btn:active,.icon-btn:active{transform:scale(.97);--sl:12%;--el-y:1px;--el-b:4px;transition-duration:100ms}
 .lb-nav.btn:active{transform:translateY(-50%) scale(.97)}

@@ -214,6 +214,9 @@ footer,footer.endcta{margin-top:-32px;padding-top:96px}
 /* shadow half-turn on hover (0.8s), returns on leave */
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) footer .foot-icon{background:#fff;border-color:rgba(16,16,18,.08);color:#0e0e10;--nhi:rgba(255,255,255,.95);--nlo:rgba(16,16,18,.05);--nsh:rgba(16,16,18,.16);--nsh2:rgba(16,16,18,.10)}}
 :root[data-theme="dark"] footer .foot-icon{background:#fff;border-color:rgba(16,16,18,.08);color:#0e0e10;--nhi:rgba(255,255,255,.95);--nlo:rgba(16,16,18,.05);--nsh:rgba(16,16,18,.16);--nsh2:rgba(16,16,18,.10)}
+/* dark theme: footer is light, so the email button gets the same soft shadow as the dark hero button in light theme */
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) footer .btn{--nsh:rgba(16,16,18,.14);--nsh2:rgba(16,16,18,.10)}}
+:root[data-theme="dark"] footer .btn{--nsh:rgba(16,16,18,.14);--nsh2:rgba(16,16,18,.10)}
 .nw{white-space:nowrap}
 #experience .exp:not(#more-exp){border-top:0}
 @media(max-width:640px){.cta-row .btn.lg{height:48px;padding:0 18px;font-size:15px}.cta-row .icon-btn{width:48px;height:48px}}
@@ -222,7 +225,7 @@ footer,footer.endcta{margin-top:-32px;padding-top:96px}
 
 /* buttons: standard hover/press = state layer + elevation (2026-11-09) */
 @property --sl{syntax:"<percentage>";inherits:false;initial-value:0%}
-.btn,.icon-btn{--el-y:3px;--el-b:10px;background-image:linear-gradient(color-mix(in srgb,currentColor var(--sl),transparent),color-mix(in srgb,currentColor var(--sl),transparent));transition:transform 150ms cubic-bezier(.2,0,0,1),--sl 150ms linear,--el-y 200ms cubic-bezier(.2,0,0,1),--el-b 200ms cubic-bezier(.2,0,0,1),background-color 200ms ease,opacity 150ms ease}
+.btn,.icon-btn{--el-y:3px;--el-b:10px;background-image:linear-gradient(color-mix(in srgb,currentColor var(--sl),transparent),color-mix(in srgb,currentColor var(--sl),transparent))!important;transition:transform 150ms cubic-bezier(.2,0,0,1),--sl 150ms linear,--el-y 200ms cubic-bezier(.2,0,0,1),--el-b 200ms cubic-bezier(.2,0,0,1),background-color 200ms ease,opacity 150ms ease}
 @media(hover:hover) and (pointer:fine){.btn:hover,.icon-btn:hover{opacity:1;transform:none;--sl:8%;--el-y:6px;--el-b:16px}.lb-nav.btn:hover{transform:translateY(-50%)}}
 .btn:active,.icon-btn:active{transform:scale(.97);--sl:12%;--el-y:1px;--el-b:4px;transition-duration:100ms}
 .lb-nav.btn:active{transform:translateY(-50%) scale(.97)}
