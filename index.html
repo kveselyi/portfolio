@@ -128,7 +128,7 @@ footer .foot-icon{background:color-mix(in srgb,var(--bg) 14%,transparent);border
   .photo{width:min(360px,78%,max(112px,calc(100svh - 405px)))}
 }
 @media(max-width:380px){
-  .photo{width:min(360px,78%,max(72px,calc(100svh - 463px)))}
+  .photo{width:min(360px,78%,max(72px,calc(100svh - 391px)))}
   .wrap{padding:0 16px}
   section{padding:48px 0}
   h2{margin-bottom:24px}
@@ -219,8 +219,12 @@ footer,footer.endcta{margin-top:-32px;padding-top:96px}
 :root[data-theme="dark"] footer .btn{--nsh:rgba(16,16,18,.14);--nsh2:rgba(16,16,18,.10)}
 .nw{white-space:nowrap}
 #experience .exp:not(#more-exp){border-top:0}
-@media(max-width:640px){.cta-row .btn.lg{height:48px;padding:0 18px;font-size:15px}.cta-row .icon-btn{width:48px;height:48px}}
-@media(max-width:380px){.cta-row .btn.lg{flex-basis:100%;justify-content:center}}
+@media(max-width:640px){
+  .cta-row,footer .row{flex-wrap:nowrap;gap:8px}
+  .cta-row .btn,footer .row .btn{height:48px;min-width:0;flex:0 1 auto;justify-content:center;padding:0 clamp(12px,4vw,18px);font-size:clamp(13px,3.9vw,15px)}
+  .cta-row .icon-btn,footer .row .icon-btn{flex:none;width:48px;height:48px}
+}
+@media(max-width:380px){.cta-row .icon-btn,footer .row .icon-btn{width:44px;height:44px}.cta-row .btn,footer .row .btn{height:44px}}
 .btn .dl{width:18px;height:18px;margin-right:8px;flex:none}
 
 /* buttons: standard hover/press = state layer + elevation (2026-11-09) */
