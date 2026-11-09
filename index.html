@@ -219,6 +219,8 @@ footer,footer.endcta{margin-top:-32px;padding-top:96px}
 :root[data-theme="dark"] footer .btn{--nsh:rgba(16,16,18,.14);--nsh2:rgba(16,16,18,.10)}
 .nw{white-space:nowrap}
 #experience .exp:not(#more-exp){border-top:0}
+/* all homepage section headings at the same display size as "My approach" */
+main h2,footer h2{font-size:clamp(40px,6vw,72px);line-height:1;letter-spacing:-.045em;font-weight:600}
 @media(max-width:640px){
   .cta-row,footer .row{flex-wrap:nowrap;gap:8px}
   .cta-row .btn,footer .row .btn{height:48px;min-width:0;flex:0 1 auto;justify-content:center;padding:0 clamp(12px,4vw,18px);font-size:clamp(13px,3.9vw,15px)}
@@ -315,7 +317,7 @@ footer,footer.endcta{margin-top:-32px;padding-top:96px}
 
   <section id="about">
     <div class="about">
-      <h2 class="big">How I work</h2>
+      <h2 class="big">My approach</h2>
       <div>
         <p>I start with user needs and business constraints, then develop flows and prototypes in close collaboration with clients, product teams and developers.</p>
         <p>My experience includes designing AI-assisted workflows, improving products through user feedback, and using A/B tests to evaluate changes to landing pages and lead-generation forms.</p>
