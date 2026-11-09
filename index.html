@@ -125,18 +125,9 @@ footer .foot-icon{background:color-mix(in srgb,var(--bg) 14%,transparent);border
 @media(prefers-reduced-motion:reduce){.btn:hover,.icon-btn:hover{animation:none;--ang:0deg}}
 
 @media(max-width:640px){
-  .photo{width:min(360px,78%,max(112px,calc(100svh - 473px)))}
+  .photo{width:min(360px,78%,max(112px,calc(100svh - 405px)))}
 }
-@media(max-width:640px){
-  .cta-row::before{content:"";flex-basis:100%;order:1}
-  .cta-row{row-gap:0}
-  .cta-row .icon-btn{order:2;margin-top:12px}
-  .cta-row .btn.lg{flex:1 1 0;padding:0 16px;justify-content:center}
-}
-@media(max-width:360px){
-  .cta-row .btn.lg{padding:0 12px;font-size:15px}
-}
-@media(max-width:360px){
+@media(max-width:380px){
   .photo{width:min(360px,78%,max(72px,calc(100svh - 463px)))}
   .wrap{padding:0 16px}
   section{padding:48px 0}
@@ -224,6 +215,9 @@ footer,footer.endcta{margin-top:-32px;padding-top:96px}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) footer .foot-icon{background:#fff;border-color:rgba(16,16,18,.08);color:#0e0e10;--nhi:rgba(255,255,255,.95);--nlo:rgba(16,16,18,.05);--nsh:rgba(16,16,18,.16);--nsh2:rgba(16,16,18,.10)}}
 :root[data-theme="dark"] footer .foot-icon{background:#fff;border-color:rgba(16,16,18,.08);color:#0e0e10;--nhi:rgba(255,255,255,.95);--nlo:rgba(16,16,18,.05);--nsh:rgba(16,16,18,.16);--nsh2:rgba(16,16,18,.10)}
 .nw{white-space:nowrap}
+#experience .exp:not(#more-exp){border-top:0}
+@media(max-width:640px){.cta-row .btn.lg{height:48px;padding:0 18px;font-size:15px}.cta-row .icon-btn{width:48px;height:48px}}
+@media(max-width:380px){.cta-row .btn.lg{flex-basis:100%;justify-content:center}}
 .btn .dl{width:18px;height:18px;margin-right:8px;flex:none}
 
 /* buttons: standard hover/press = state layer + elevation (2026-11-09) */
@@ -255,13 +249,12 @@ footer,footer.endcta{margin-top:-32px;padding-top:96px}
     <p class="role">Senior UX/UI Designer</p>
     <p class="intro">I design clear interfaces for B2B platforms and mobile apps, with 8+ years across SaaS, fintech, healthcare and <span class="nw">e-commerce</span>.</p>
     <div class="cta-row">
-      <a class="btn lg" href="#work">View selected work</a>
-      <a class="btn lg ghost" href="mailto:veselyi.design@gmail.com">Contact me</a>
+      <a class="btn lg" href="mailto:veselyi.design@gmail.com">veselyi.design@gmail.com</a>
+      <a class="icon-btn" href="https://t.me/kapkos" target="_blank" rel="noopener" aria-label="Telegram">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.6195 5.24993C21.4095 6.60991 19.9895 15.8499 19.5295 18.7499C19.5304 18.967 19.4755 19.1807 19.3703 19.3706C19.2651 19.5605 19.1129 19.7203 18.9284 19.8346C18.7438 19.949 18.5331 20.0141 18.3162 20.0238C18.0993 20.0335 17.8835 19.9874 17.6895 19.8899C17.0855 19.6779 16.516 19.378 15.9995 18.9999C14.4095 17.9399 12.7895 16.9299 11.2895 15.7499C10.5695 15.1799 10.5595 14.6499 11.2895 14.0199C13.0335 12.4294 14.7439 10.8024 16.4195 9.13994C16.6395 8.91991 17.1395 8.42993 16.8595 8.13991C16.5795 7.84994 15.9995 8.25991 15.7195 8.44994C13.3795 10.0099 11.0195 11.5599 8.71949 13.1599C8.33607 13.449 7.88747 13.6394 7.41317 13.7144C6.93887 13.7894 6.45341 13.7467 5.99952 13.5899C4.8995 13.2599 3.80952 12.8999 2.72952 12.5399C2.28951 12.3999 1.12949 11.9299 3.2795 11.0499C8.76951 8.76991 14.3695 6.47993 19.8795 4.20991C21.2195 3.69991 21.7795 4.14991 21.6195 5.24993Z"/></svg>
+      </a>
       <a class="icon-btn" href="https://www.linkedin.com/in/veselyi/" target="_blank" rel="noopener" aria-label="LinkedIn">
         <svg viewBox="0 0 24 24" fill="none"><path fill="currentColor" d="M7.36086 19.1999H3.87711V7.98365H7.36086V19.1999ZM5.61711 6.45365C4.50336 6.45365 3.59961 5.53115 3.59961 4.4174C3.59961 3.88115 3.81336 3.37115 4.19211 2.9924C4.57086 2.61365 5.08461 2.3999 5.61711 2.3999C6.14961 2.3999 6.66336 2.61365 7.04211 2.9924C7.42086 3.37115 7.63461 3.8849 7.63461 4.4174C7.63461 5.53115 6.73086 6.45365 5.61711 6.45365ZM20.3959 19.1999H16.9196V13.7399C16.9196 12.4387 16.8934 10.7699 15.1084 10.7699C13.2971 10.7699 13.0196 12.1837 13.0196 13.6462V19.1999H9.53961V7.98365H12.8809V9.51365H12.9296C13.3946 8.6324 14.5309 7.7024 16.2259 7.7024C19.7509 7.7024 20.3996 10.0237 20.3996 13.0387V19.1999H20.3959Z"/></svg>
-      </a>
-      <a class="icon-btn" href="https://www.behance.net/ka_es" target="_blank" rel="noopener" aria-label="Behance">
-        <svg viewBox="0 0 24 24" fill="none"><path fill="currentColor" d="M9.9002 11.295C11.0927 10.725 11.7152 9.86254 11.7152 8.52004C11.7152 5.87254 9.7427 5.22754 7.46645 5.22754H1.2002V18.5175H7.6427C10.0577 18.5175 12.3264 17.3588 12.3264 14.6588C12.3264 12.99 11.5352 11.7563 9.9002 11.295ZM4.12145 7.49629H6.8627C7.91645 7.49629 8.8652 7.79254 8.8652 9.01504C8.8652 10.1438 8.12645 10.5975 7.08395 10.5975H4.12145V7.49629ZM7.2452 16.26H4.12145V12.6H7.3052C8.59145 12.6 9.4052 13.1363 9.4052 14.4975C9.4052 15.84 8.43395 16.26 7.2452 16.26ZM20.6889 7.23379H15.3002V5.92504H20.6889V7.23379ZM22.8002 13.845C22.8002 10.9988 21.1352 8.62504 18.1164 8.62504C15.1839 8.62504 13.1927 10.83 13.1927 13.7175C13.1927 16.7138 15.0789 18.7688 18.1164 18.7688C20.4152 18.7688 21.9039 17.7338 22.6202 15.5325H20.2877C20.0364 16.3538 19.0014 16.7888 18.1989 16.7888C16.6502 16.7888 15.8364 15.8813 15.8364 14.34H22.7777C22.7889 14.1825 22.8002 14.0138 22.8002 13.845ZM15.8402 12.675C15.9264 11.4113 16.7664 10.62 18.0339 10.62C19.3614 10.62 20.0289 11.4 20.1414 12.675H15.8402Z"/></svg>
       </a>
     </div>
   </header>
@@ -317,7 +310,7 @@ footer,footer.endcta{margin-top:-32px;padding-top:96px}
     <div class="about">
       <h2 class="big">How I work</h2>
       <div>
-        <p>I start by understanding the task, the people doing it and the business constraints. I turn that understanding into user flows, prototypes and interfaces, refining the details with clients, product teams and developers.</p>
+        <p>I start with user needs and business constraints, then develop flows and prototypes in close collaboration with clients, product teams and developers.</p>
         <p>My experience includes designing AI-assisted workflows, improving products through user feedback, and using A/B tests to evaluate changes to landing pages and lead-generation forms.</p>
       </div>
     </div>
