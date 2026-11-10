@@ -218,6 +218,12 @@ ol.challenge li:first-child{border-top:0;padding-top:0}
 .hero-img{justify-content:flex-start}
 .bento{background:transparent;padding:0;border-radius:0;justify-content:flex-start}
 @media (max-width:860px){.bento{padding:8px 0 16px}}
+
+/* 2026-11-10: case footer buttons styled like the homepage footer (ghost = footer icon buttons) */
+footer .btn.ghost{background:color-mix(in srgb,var(--bg) 14%,transparent);border-color:color-mix(in srgb,var(--bg) 24%,transparent);color:var(--bg)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) footer .btn{--nsh:rgba(16,16,18,.14);--nsh2:rgba(16,16,18,.10)}:root:not([data-theme="light"]) footer .btn.ghost{background:#fff;border-color:rgba(16,16,18,.08);color:#0e0e10;--nhi:rgba(255,255,255,.95);--nlo:rgba(16,16,18,.05);--nsh:rgba(16,16,18,.16);--nsh2:rgba(16,16,18,.10)}}
+:root[data-theme="dark"] footer .btn{--nsh:rgba(16,16,18,.14);--nsh2:rgba(16,16,18,.10)}
+:root[data-theme="dark"] footer .btn.ghost{background:#fff;border-color:rgba(16,16,18,.08);color:#0e0e10;--nhi:rgba(255,255,255,.95);--nlo:rgba(16,16,18,.05);--nsh:rgba(16,16,18,.16);--nsh2:rgba(16,16,18,.10)}
 </style>
 </head>
 <body>
