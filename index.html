@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<script>try{var t=localStorage.getItem('kv-theme');if(t==='dark'||t==='light')document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
+<script>var t='light';try{if(localStorage.getItem('kv-theme')==='dark')t='dark'}catch(e){}document.documentElement.setAttribute('data-theme',t);addEventListener('pageshow',function(e){if(!e.persisted)return;var d='light';try{if(localStorage.getItem('kv-theme')==='dark')d='dark'}catch(x){}document.documentElement.setAttribute('data-theme',d)})</script>
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <title>Konstantin Veselyi — Senior UX/UI Designer</title>
