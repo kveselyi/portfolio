@@ -303,6 +303,10 @@ footer .btn.ghost{background:color-mix(in srgb,var(--bg) 14%,transparent);border
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) footer .btn{--nsh:rgba(16,16,18,.14);--nsh2:rgba(16,16,18,.10)}:root:not([data-theme="light"]) footer .btn.ghost{background:#fff;border-color:rgba(16,16,18,.08);color:#0e0e10;--nhi:rgba(255,255,255,.95);--nlo:rgba(16,16,18,.05);--nsh:rgba(16,16,18,.16);--nsh2:rgba(16,16,18,.10)}}
 :root[data-theme="dark"] footer .btn{--nsh:rgba(16,16,18,.14);--nsh2:rgba(16,16,18,.10)}
 :root[data-theme="dark"] footer .btn.ghost{background:#fff;border-color:rgba(16,16,18,.08);color:#0e0e10;--nhi:rgba(255,255,255,.95);--nlo:rgba(16,16,18,.05);--nsh:rgba(16,16,18,.16);--nsh2:rgba(16,16,18,.10)}
+
+/* 2026-11-10: rounded corners on every screenshot (hero + single images), like tiles */
+.hero-img img,.plain-img img{border-radius:24px}
+@media (max-width:640px){.hero-img img,.plain-img img{border-radius:16px}}
 </style>
 </head>
 <body>
