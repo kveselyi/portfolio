@@ -214,6 +214,13 @@ footer,footer.endcta{margin-top:-32px;padding-top:96px}
 .btn:active,.icon-btn:active{transform:scale(.97);--sl:12%;--el-y:1px;--el-b:4px;transition-duration:100ms}
 .lb-nav.btn:active{transform:translateY(-50%) scale(.97)}
 @media(prefers-reduced-motion:reduce){.btn:active,.icon-btn:active{transform:none}.lb-nav.btn:active{transform:translateY(-50%)}}
+
+/* 2026-11-10: no dividers between blocks, first list line removed, hero image left, screens container flat */
+main section+section{border-top:0}
+ol.challenge li:first-child{border-top:0;padding-top:0}
+.hero-img{justify-content:flex-start}
+.bento{background:transparent;padding:0;border-radius:0;justify-content:flex-start}
+@media (max-width:860px){.bento{padding:8px 0 16px}}
 </style>
 </head>
 <body>
