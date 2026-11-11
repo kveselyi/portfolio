@@ -249,8 +249,8 @@ main h2 + .eyebrow{margin:0 0 32px}
 section{border-top:0}
 
 /* photo stack (Beyond design) */
-.pstack{--ov:.28;--sc:1.14;display:flex;align-items:center;margin:40px 0 0;padding:16px 0;list-style:none;-webkit-tap-highlight-color:transparent}
-.pstack li{--r:0deg;--y:0px;position:relative;flex:0 0 auto;width:min(184px,calc(100% / 3.72));aspect-ratio:4/5;margin-left:calc(min(184px,calc(100% / 3.72)) * var(--ov) * -1);border-radius:16px;overflow:hidden;background:var(--tile);cursor:pointer;outline:none;
+.pstack{--n:5;--ov:.28;--sc:1.14;display:flex;align-items:center;margin:40px 0 0;padding:16px 0;list-style:none;-webkit-tap-highlight-color:transparent}
+.pstack li{--r:0deg;--y:0px;position:relative;flex:0 0 auto;--w:min(208px,calc(100% / (var(--n) - (var(--n) - 1) * var(--ov))));width:var(--w);aspect-ratio:4/5;margin-left:calc(var(--w) * var(--ov) * -1);border-radius:16px;overflow:hidden;background:var(--tile);cursor:pointer;outline:none;
   transform:translateY(var(--y)) rotate(var(--r));
   box-shadow:0 0 0 1px var(--line),0 2px 8px rgba(16,16,18,.08);
   transition:transform 450ms var(--ease-out),box-shadow 450ms var(--ease-out)}
@@ -269,7 +269,7 @@ section{border-top:0}
 :root[data-theme="dark"] .pstack li{box-shadow:0 0 0 1px var(--line),0 2px 8px rgba(0,0,0,.4)}
 :root[data-theme="dark"] .pstack li.is-active{box-shadow:0 0 0 1px var(--line),0 16px 40px rgba(0,0,0,.6)}
 @media(hover:hover) and (pointer:fine){:root[data-theme="dark"] .pstack li:hover{box-shadow:0 0 0 1px var(--line),0 16px 40px rgba(0,0,0,.6)}}
-@media(max-width:640px){.pstack{--ov:.4;--sc:1.32;margin-top:32px;padding:24px 0}.pstack li{width:calc(100% / 3.4);margin-left:calc(100% / 3.4 * var(--ov) * -1);border-radius:12px}.pstack li:first-child{margin-left:0}}
+@media(max-width:640px){.pstack{--ov:.4;--sc:1.32;margin-top:32px;padding:24px 0}.pstack li{--w:calc(100% / (var(--n) - (var(--n) - 1) * var(--ov)));border-radius:12px}.pstack li:first-child{margin-left:0}}
 @media(prefers-reduced-motion:reduce){.pstack li{transition:none}}
 </style>
 </head>
@@ -391,7 +391,7 @@ section{border-top:0}
       </div>
       <div class="svc-right">
         <p class="me">I’m originally from Odesa, and that’s why I love fishing and spearfishing. I also enjoy traveling and have visited seven countries so far. Outside work, I stay active at the gym, spend time with my family and draw by hand.</p>
-        <ul class="pstack" aria-label="Personal photos"><li tabindex="0"><div class="ph">Photo 1</div></li><li tabindex="0"><div class="ph">Photo 2</div></li><li tabindex="0"><div class="ph">Photo 3</div></li><li tabindex="0"><div class="ph">Photo 4</div></li><li tabindex="0"><div class="ph">Photo 5</div></li></ul>
+        <ul class="pstack" style="--n:4" aria-label="Personal photos"><li tabindex="0"><img src="img/about/mountains.webp" alt="Konstantin hiking in the Carpathian mountains" width="560" height="700" loading="lazy" decoding="async"></li><li tabindex="0"><img src="img/about/sailing.webp" alt="Konstantin on a sailing boat at sunset" width="560" height="700" loading="lazy" decoding="async"></li><li tabindex="0"><img src="img/about/marathon.webp" alt="Konstantin at a running race in Kyiv" width="560" height="700" loading="lazy" decoding="async"></li><li tabindex="0"><img src="img/about/barcelona.webp" alt="Konstantin on a street in Barcelona" width="560" height="700" loading="lazy" decoding="async"></li></ul>
       </div>
     </div>
   </section>
