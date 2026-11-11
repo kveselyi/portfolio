@@ -249,8 +249,8 @@ main h2 + .eyebrow{margin:0 0 32px}
 section{border-top:0}
 
 /* photo stack (Beyond design) */
-.pstack{--n:5;--ov:.28;--sc:1.14;display:flex;align-items:center;margin:40px 0 0;padding:16px 0;list-style:none;-webkit-tap-highlight-color:transparent}
-.pstack li{--r:0deg;--y:0px;position:relative;flex:0 0 auto;--w:min(208px,calc(100% / (var(--n) - (var(--n) - 1) * var(--ov))));width:var(--w);aspect-ratio:4/5;margin-left:calc(var(--w) * var(--ov) * -1);border-radius:16px;overflow:hidden;background:var(--tile);cursor:pointer;outline:none;
+.pstack{--n:5;--ov:.2;--sc:1.2;display:flex;align-items:center;margin:40px 0 0;padding:16px 0;list-style:none;-webkit-tap-highlight-color:transparent}
+.pstack li{--r:0deg;--y:0px;position:relative;flex:0 0 auto;--w:min(160px,calc(100% / (var(--n) - (var(--n) - 1) * var(--ov))));width:var(--w);aspect-ratio:4/5;margin-left:calc(var(--w) * var(--ov) * -1);border-radius:16px;overflow:hidden;background:var(--tile);cursor:pointer;outline:none;
   transform:translateY(var(--y)) rotate(var(--r));
   box-shadow:0 0 0 1px var(--line),0 2px 8px rgba(16,16,18,.08);
   transition:transform 450ms var(--ease-out),box-shadow 450ms var(--ease-out)}
@@ -269,7 +269,7 @@ section{border-top:0}
 :root[data-theme="dark"] .pstack li{box-shadow:0 0 0 1px var(--line),0 2px 8px rgba(0,0,0,.4)}
 :root[data-theme="dark"] .pstack li.is-active{box-shadow:0 0 0 1px var(--line),0 16px 40px rgba(0,0,0,.6)}
 @media(hover:hover) and (pointer:fine){:root[data-theme="dark"] .pstack li:hover{box-shadow:0 0 0 1px var(--line),0 16px 40px rgba(0,0,0,.6)}}
-@media(max-width:640px){.pstack{--ov:.4;--sc:1.32;margin-top:32px;padding:24px 0}.pstack li{--w:calc(100% / (var(--n) - (var(--n) - 1) * var(--ov)));border-radius:12px}.pstack li:first-child{margin-left:0}}
+@media(max-width:640px){.pstack{--ov:.2;--sc:1.4;margin-top:32px;padding:24px 0}.pstack li{--w:calc(100% / (var(--n) - (var(--n) - 1) * var(--ov)));border-radius:12px}.pstack li:first-child{margin-left:0}}
 @media(prefers-reduced-motion:reduce){.pstack li{transition:none}}
 </style>
 </head>
