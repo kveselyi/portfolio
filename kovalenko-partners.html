@@ -307,6 +307,11 @@ footer .btn.ghost{background:color-mix(in srgb,var(--bg) 14%,transparent);border
 /* 2026-11-10: rounded corners on every screenshot (hero + single images), like tiles */
 .hero-img img,.plain-img img{border-radius:24px}
 @media (max-width:640px){.hero-img img,.plain-img img{border-radius:16px}}
+
+/* shared column grid (2026-11-12): one gutter, columns split on the same lines on every page */
+:root{--gutter:24px}
+@media(max-width:640px){:root{--gutter:16px}}
+.stats{gap:var(--gutter)}
 </style>
 </head>
 <body>

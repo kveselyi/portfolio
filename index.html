@@ -272,6 +272,17 @@ section{border-top:0}
 @media(hover:hover) and (pointer:fine){:root[data-theme="dark"] .pstack li:hover{box-shadow:0 0 0 1px var(--line),0 16px 40px rgba(0,0,0,.6)}}
 @media(max-width:640px){.pstack{--ov:.2;--sc:1.4;margin-top:32px;padding:24px 0}.pstack li{--w:calc(100% / (var(--n) - (var(--n) - 1) * var(--ov)));border-radius:12px}.pstack li:first-child{margin-left:0}}
 @media(prefers-reduced-motion:reduce){.pstack li{transition:none}}
+
+/* shared column grid (2026-11-12): one gutter, columns split on the same lines on every page */
+:root{--gutter:24px}
+@media(max-width:640px){:root{--gutter:16px}}
+.stats{gap:var(--gutter)}
+.grid{column-gap:var(--gutter)}
+@media(min-width:760px){.about,.svc-layout{grid-template-columns:1fr 1fr;column-gap:var(--gutter)}}
+.role-row{grid-template-columns:1fr;gap:4px}
+@media(max-width:640px){.wrap{padding:0 16px}section{padding:48px 0}}
+#experience .more{justify-content:flex-start}
+.pstack{padding-left:2%;padding-right:2%} /* rotated first/last photo stays inside the column lines */
 </style>
 </head>
 <body>
