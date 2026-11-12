@@ -284,6 +284,8 @@ section{border-top:0}
 #experience .more{justify-content:flex-start}
 .pstack{padding-left:2%;padding-right:2%} /* rotated first/last photo stays inside the column lines */
 @media(min-width:641px){footer .row .icon-btn{width:42px;height:42px}footer .row .icon-btn svg{width:18px;height:18px}} /* icon buttons = email button height */
+/* hero location + live time (preview c) */
+.loc{font-family:"Geist Mono",monospace;font-size:13px;line-height:16px;letter-spacing:.02em;color:var(--mute);font-variant-numeric:tabular-nums}.loc time{color:var(--ink)}.loc-foot{margin:24px 0 0}.loc .sep{opacity:.5}@media(max-width:640px){.loc-foot{margin-top:16px}.loc-foot .lt{display:none}}
 </style>
 </head>
 <body>
@@ -314,6 +316,7 @@ section{border-top:0}
         <svg viewBox="0 0 24 24" fill="none"><path fill="currentColor" d="M7.36086 19.1999H3.87711V7.98365H7.36086V19.1999ZM5.61711 6.45365C4.50336 6.45365 3.59961 5.53115 3.59961 4.4174C3.59961 3.88115 3.81336 3.37115 4.19211 2.9924C4.57086 2.61365 5.08461 2.3999 5.61711 2.3999C6.14961 2.3999 6.66336 2.61365 7.04211 2.9924C7.42086 3.37115 7.63461 3.8849 7.63461 4.4174C7.63461 5.53115 6.73086 6.45365 5.61711 6.45365ZM20.3959 19.1999H16.9196V13.7399C16.9196 12.4387 16.8934 10.7699 15.1084 10.7699C13.2971 10.7699 13.0196 12.1837 13.0196 13.6462V19.1999H9.53961V7.98365H12.8809V9.51365H12.9296C13.3946 8.6324 14.5309 7.7024 16.2259 7.7024C19.7509 7.7024 20.3996 10.0237 20.3996 13.0387V19.1999H20.3959Z"/></svg>
       </a>
     </div>
+    <p class="loc loc-foot">Based in Vyshneve, Ukraine<span class="sep" aria-hidden="true"> · </span><time data-kyiv-time>17:13</time><span class="lt"> local time</span></p>
   </header>
 
   <section id="work">
@@ -459,5 +462,15 @@ document.getElementById('theme').addEventListener('click',function(){
 })();
 </script>
 <script>document.addEventListener("touchstart",function(){},{passive:true})</script>
+<script>
+/* live local time in Kyiv timezone (Vyshneve), updates on each minute */
+(function(){var els=document.querySelectorAll('[data-kyiv-time]');if(!els.length)return;
+var f=new Intl.DateTimeFormat('en-GB',{timeZone:'Europe/Kyiv',hour:'2-digit',minute:'2-digit',hour12:false});
+var o;try{o=new Intl.DateTimeFormat('en-US',{timeZone:'Europe/Kyiv',timeZoneName:'shortOffset'}).formatToParts(new Date()).find(function(p){return p.type==='timeZoneName'}).value}catch(e){o=''}
+function tick(){var d=new Date(),t=f.format(d);els.forEach(function(el){el.textContent=t;el.setAttribute('datetime',t)});
+document.querySelectorAll('[data-kyiv-off]').forEach(function(el){el.textContent=o});
+clearTimeout(tick.t);tick.t=setTimeout(tick,60000-d.getSeconds()*1000-d.getMilliseconds()+50)}
+tick();document.addEventListener('visibilitychange',function(){if(!document.hidden)tick()})})();
+</script>
 </body>
 </html>
